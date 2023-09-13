@@ -13,8 +13,9 @@ import RxSwift
 final class SearchViewModel {
     
     private let coordinator: SearchCoordinator?
-    private let usecase: SearchUseCase
+    public let usecase: SearchUseCase
     var pages: Int = 0
+    var reset: Bool = false
     var results: [ResultModel]?
     var indexPath: IndexPath = IndexPath(row: 0, section: 0)
     var items: PublishSubject<[ResultModel]> = PublishSubject<[ResultModel]>()
@@ -28,6 +29,7 @@ final class SearchViewModel {
         let error = PublishSubject<String>()
         var selectedResult = PublishSubject<ResultModel>()
         let selectedCell = PublishSubject<IndexPath>()
+        let search = PublishSubject<String>()
     }
     
     init(coordinator: SearchCoordinator?, usecase: SearchUseCase) {
@@ -58,26 +60,36 @@ extension SearchViewModel {
             self.requestHighlight(output: output)
         })
         .disposed(by: disposeBag)
+        
 
                 
         return output
     }
     
     private func keys() -> (String,String ,String) {
-        let timeStamp = "\(Date.currentTimeStamp/1000)"
-        let publickey = "f69cf6559688e3bbec15256960a87351"
-        let privatekey = "01e9d8880bf8f529ddac95677c4cdef0725cdffa"
-        let str = timeStamp + publickey + privatekey
-        let md5 = MD5(string: str)
-        let md5Hex =  md5.map { String(format: "%02hhx", $0) }.joined()
-//        return (timeStamp, publickey, md5Hex)
-        return ("1694552607", publickey, "fb91d3fdd250c80817096b298c56ea83")
+        let pub = AppManager.shared.publicApi
+        let pri = AppManager.shared.privteApi
+        let ts = AppManager.shared.timeStamp
+        return (ts, pub, pri)
     }
 
     
-    func requestHighlight(output: Output) {
+    func requestHighlight(output: Output, name:String? = nil) {
         let keys = keys()
-        let request = Search.Request(limit: 10, offset: self.pages, ts: keys.0, apikey: keys.1, hash: keys.2)
+        var str: String? = nil
+        if self.reset {
+            self.results = nil
+            self.pages = 0
+            if name == "" {
+                str = nil
+            }else {
+                str = name
+            }            
+        }
+        
+        self.reset = false
+
+        let request = Search.Request(name: str, limit: 10, offset: self.pages, ts: keys.0, apikey: keys.1, hash: keys.2)
         usecase.requestSearch(request: request) { [weak self] success, response, error in
             guard let self = self else { return }
             if success, let models = response {
@@ -87,8 +99,7 @@ extension SearchViewModel {
                     self.results!.append(contentsOf: models)
                 }
                 
-                output.items.onNext(self.results!)
-                
+                output.items.onNext(self.results!)                
             } else {
                 output.error.onNext("error")
             }
@@ -96,4 +107,6 @@ extension SearchViewModel {
         
         
     }
+    
+
 }

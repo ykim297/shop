@@ -30,8 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         appCoordinator = AppCoordinator(navigationController: navigationController)
         appCoordinator?.tabFlow()
-        
-
 
     }
 

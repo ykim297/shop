@@ -20,6 +20,9 @@ enum AppName: String {
 
 class AppManager {
     let plist_Configuration: String = "Configuration"                       // debug, release 체크
+    let plist_privateApi: String = "PrivateAPI"
+    let plist_publicApi: String = "PublicAPI"
+    let plist_timeStamp: String = "TimeStamp"
     let plist_version: String = "CFBundleShortVersionString"                // 앱 버젼
     let plist_appName: String = "CFBundleName"                              // 앱 이름
     let plist_buildVersion: String = "CFBundleVersion"                      // 빌드 번호
@@ -27,8 +30,6 @@ class AppManager {
     let userDefault_CurrentDomain: String = "currentDomain"                 // 사용 도메인
     let userDefault_DesignQAMode: String = "designQAMode"                   // 디자인 QA 모드
     let userDefault_Characters: String = "marvelheros"                   // 마블 카드
-    
-    
 
     // 앱 매니저 부분
     var serverType: ServerType                                              // 서버 타입
@@ -39,6 +40,11 @@ class AppManager {
     var isAdd: Bool = false                                                 // 정의되어 있지 않은 키값이 default에 들어가는 유무
     let appName: String                                                     // 앱 이름 저장
     var designQA: Bool = false                                              // 디자인 QA 모드
+    
+    
+    let publicApi: String
+    let privteApi: String
+    let timeStamp: String
 
     static var appVersion: String? {
         guard let dictionary = Bundle.main.infoDictionary,
@@ -82,6 +88,25 @@ class AppManager {
             let value = userDefault.bool(forKey: userDefault_DesignQAMode)
             self.designQA = value
         }
+        
+        if let privateapi = Bundle.main.object(forInfoDictionaryKey: plist_privateApi) as? String {
+            self.privteApi = privateapi
+        } else {
+            self.privteApi = ""
+        }
+
+        if let publicapi = Bundle.main.object(forInfoDictionaryKey: plist_publicApi) as? String {
+            self.publicApi = publicapi
+        } else {
+            self.publicApi = ""
+        }
+
+        if let ts = Bundle.main.object(forInfoDictionaryKey: plist_timeStamp) as? String {
+            self.timeStamp = ts
+        } else {
+            self.timeStamp = ""
+        }
+
 
 
         guard let configuration = Bundle.main.object(forInfoDictionaryKey: plist_Configuration) as? String else {

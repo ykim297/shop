@@ -89,6 +89,7 @@ extension CollectionContainerView {
         collectionView.bounces = false
         collectionView.showsVerticalScrollIndicator = true
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.keyboardDismissMode = .onDrag
         
         
         setDataSource()

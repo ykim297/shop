@@ -12,6 +12,10 @@ class SearchViewController: BaseViewController {
 
     var viewModel: SearchViewModel?
     let containerView: CollectionContainerView = CollectionContainerView()
+    var searchBar: UISearchBar = UISearchBar()
+    var isSearch : Bool = false
+
+
         
     deinit {
         Log.message(to: "Log message")
@@ -44,6 +48,14 @@ class SearchViewController: BaseViewController {
         super.setComponent()
         self.view.backgroundColor = .white
         
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        self.view.addSubview(searchBar)
+        
         self.view.addSubview(containerView)
         containerView.setLayerBorder()
         
@@ -53,9 +65,16 @@ class SearchViewController: BaseViewController {
     override func setAutolayOut() {
         super.setAutolayOut()
         
-        containerView.snp.makeConstraints { [weak self] view in
+        searchBar.snp.makeConstraints { [weak self] view in
             guard let self = self else { return }
             view.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            view.left.right.equalTo(self.view)
+            view.height.equalTo(40.0)
+        }
+        
+        containerView.snp.makeConstraints { [weak self] view in
+            guard let self = self else { return }
+            view.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(40.0)
             view.left.right.bottom.equalTo(self.view)
         }
     }
@@ -125,3 +144,93 @@ extension SearchViewController {
 }
 
 
+extension SearchViewController: UISearchBarDelegate{
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+           isSearch = true
+    }
+       
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+           searchBar.resignFirstResponder()
+           isSearch = false
+    }
+       
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+           searchBar.resignFirstResponder()
+           isSearch = false
+    }
+       
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+           searchBar.resignFirstResponder()
+           isSearch = false
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        let count = searchText.count
+        switch count {
+        case 0:
+            isSearch = false
+            guard let model = self.viewModel else { return }
+            self.viewModel?.reset = true
+            self.requestHighlight()
+            break
+            
+        case 1:
+            isSearch = false
+            self.viewModel?.reset = false
+            break
+        default:
+            isSearch = true
+            guard let model = self.viewModel else { return }
+            self.viewModel?.reset = true
+            self.requestHighlight(name: searchText)
+            break
+            
+        }
+                
+    }
+    
+    private func keys() -> (String,String ,String) {
+        let pub = AppManager.shared.publicApi
+        let pri = AppManager.shared.privteApi
+        let ts = AppManager.shared.timeStamp
+        return (ts, pub, pri)
+    }
+    
+    func requestHighlight(name:String? = nil) {
+        let keys = keys()
+        guard let model = self.viewModel else { return }
+        var str: String? = nil
+        if self.viewModel!.reset {
+            self.viewModel!.results = nil
+            self.viewModel!.pages = 0
+            if name == "" {
+                str = nil
+            }else {
+                str = name
+            }
+        }
+        
+        self.viewModel?.reset = false
+
+        let request = Search.Request(name: str, limit: 10, offset: self.viewModel!.pages, ts: keys.0, apikey: keys.1, hash: keys.2)
+        self.viewModel!.usecase.requestSearch(request: request) { [weak self] success, response, error in
+            guard let self = self else { return }
+            if success, let models = response {
+                if self.viewModel!.results == nil {
+                    self.viewModel!.results = models
+                } else {
+                    self.viewModel!.results!.append(contentsOf: models)
+                }
+                
+                self.viewModel!.items.onNext(self.viewModel!.results!)
+                
+            } else {
+                
+            }
+        }
+        
+        
+    }
+
+}

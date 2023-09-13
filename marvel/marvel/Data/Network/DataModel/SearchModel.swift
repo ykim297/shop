@@ -10,14 +10,14 @@ import Foundation
 enum Search{
     
     struct Request: Codable {
-//        let name: String
+        let name: String?
         let limit: Int
         let offset: Int
         let ts: String
         let apikey: String
         let hash: String
     }    
-    
+
     struct Response: Codable {
         let code: Int
         let status: String

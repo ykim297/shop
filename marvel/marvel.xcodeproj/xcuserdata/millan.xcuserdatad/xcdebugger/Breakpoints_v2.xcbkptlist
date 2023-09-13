@@ -46,8 +46,8 @@
             filePath = "marvel/Presentation/Common/CollectionContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "setDataSource()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,73 +62,10 @@
             filePath = "marvel/Presentation/Common/CollectionContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "63F36B14-4A78-4D2A-B8BF-34E14A3D1BA8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "marvel/Presentation/FavoriteScene/ViewModel/FavoriteViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "transform(input:disposeBag:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "63F36B14-4A78-4D2A-B8BF-34E14A3D1BA8 - 65ce480b5cbc5102"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "marvel.FavoriteViewModel.transform(input: marvel.FavoriteViewModel.Input, disposeBag: RxSwift.DisposeBag) -&gt; marvel.FavoriteViewModel.Output"
-                  moduleName = "marvel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/FavoriteScene/ViewModel/FavoriteViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "192">
-               </Location>
-               <Location
-                  uuid = "63F36B14-4A78-4D2A-B8BF-34E14A3D1BA8 - 65ce480b5cbc51e5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "marvel.FavoriteViewModel.transform(input: marvel.FavoriteViewModel.Input, disposeBag: RxSwift.DisposeBag) -&gt; marvel.FavoriteViewModel.Output"
-                  moduleName = "marvel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/FavoriteScene/ViewModel/FavoriteViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "178">
-               </Location>
-               <Location
-                  uuid = "63F36B14-4A78-4D2A-B8BF-34E14A3D1BA8 - 65ce480b5cbc51e5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "marvel.FavoriteViewModel.transform(input: marvel.FavoriteViewModel.Input, disposeBag: RxSwift.DisposeBag) -&gt; marvel.FavoriteViewModel.Output"
-                  moduleName = "marvel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/FavoriteScene/ViewModel/FavoriteViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "254">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -204,10 +141,136 @@
             filePath = "marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "bindViewModel()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7189BFCA-5FD8-49AE-884F-478B8AFA3708"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "requestHighlight(name:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7189BFCA-5FD8-49AE-884F-478B8AFA3708 - 65989ae088f2c0cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "marvel.SearchViewController.requestHighlight(name: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "marvel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "2358">
+               </Location>
+               <Location
+                  uuid = "7189BFCA-5FD8-49AE-884F-478B8AFA3708 - e1b5d27f5e138994"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Array&lt;marvel.ResultModel&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in marvel.SearchViewController.requestHighlight(name: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "marvel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "197">
+               </Location>
+               <Location
+                  uuid = "7189BFCA-5FD8-49AE-884F-478B8AFA3708 - 65989ae088f2c12c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "marvel.SearchViewController.requestHighlight(name: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "marvel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "2358">
+               </Location>
+               <Location
+                  uuid = "7189BFCA-5FD8-49AE-884F-478B8AFA3708 - e1b5d27f5e138875"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Array&lt;marvel.ResultModel&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in marvel.SearchViewController.requestHighlight(name: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "marvel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "197">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBDBF0BC-DB55-4960-821B-D6C667DAC2A5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "requestHighlight(name:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EBDBF0BC-DB55-4960-821B-D6C667DAC2A5 - e1b5d27f5e138837"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Array&lt;marvel.ResultModel&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in marvel.SearchViewController.requestHighlight(name: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "marvel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "EBDBF0BC-DB55-4960-821B-D6C667DAC2A5 - e1b5d27f5e138818"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.Array&lt;marvel.ResultModel&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in marvel.SearchViewController.requestHighlight(name: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "marvel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/millan/Desktop/marvel/marvel/Presentation/SearchScene/ViewController/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,6 +7,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>PrivateAPI</key>
+	<string>fb91d3fdd250c80817096b298c56ea83</string>
+	<key>PublicAPI</key>
+	<string>f69cf6559688e3bbec15256960a87351</string>
+	<key>TimeStamp</key>
+	<string>1694552607</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

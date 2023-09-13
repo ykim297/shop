@@ -34,8 +34,7 @@ class TabCoordinator: NSObject, Coordinator {
         self.tabBarController = .init()
     }
 
-    func start() {
-        // Let's define which pages do we want to add into tab bar
+    func start() {        
         let pages: [TabBarPage] = [.search, .favorite]
             .sorted(by: { $0.pageOrderNumber() < $1.pageOrderNumber() })
         
@@ -111,6 +110,5 @@ class TabCoordinator: NSObject, Coordinator {
 extension TabCoordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
-        // Some implementation
     }
 }
